@@ -112,3 +112,7 @@ DROP VIEW empdept;
 -- JOIN  Department d ON e.DeptId = d.DeptId;
 
  -- select *from empdeptview;
+
+SELECT *
+FROM Employee
+WHERE DOJ <= ADD_MONTHS(SYSDATE, -12*3);
