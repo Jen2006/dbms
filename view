@@ -116,3 +116,9 @@ DROP VIEW empdept;
 SELECT *
 FROM Employee
 WHERE DOJ <= ADD_MONTHS(SYSDATE, -12*3);
+
+SELECT *
+FROM Employee
+WHERE DOJ <= ADD_MONTHS(SYSDATE, -36)  -- completed at least 3 years
+  AND Salary < 30000;
+
