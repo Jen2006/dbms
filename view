@@ -109,9 +109,6 @@ DROP VIEW empdept;
 --     d.DeptLoc
 -- FROM 
 --     Employee e
--- JOIN 
-
-
---     Department d ON e.DeptId = d.DeptId;
+-- JOIN  Department d ON e.DeptId = d.DeptId;
 
  -- select *from empdeptview;
