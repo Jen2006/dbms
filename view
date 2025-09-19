@@ -95,3 +95,23 @@
 -- select * from empdept where DeptName='Sales';
 -- select * from empdept where not DeptName='HR';
 -- select * from empdept where DeptName='Sales' and DeptLoc='Chennai';
+
+DROP VIEW empdept;
+
+-- CREATE VIEW empdeptview AS
+-- SELECT 
+--     e.EmpName,
+--     e.DoB,
+--     e.DOJ,        
+--     e.Salary,
+--     d.DeptId,
+--     d.DeptName,
+--     d.DeptLoc
+-- FROM 
+--     Employee e
+-- JOIN 
+
+
+--     Department d ON e.DeptId = d.DeptId;
+
+ -- select *from empdeptview;
