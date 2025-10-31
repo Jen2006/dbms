@@ -67,3 +67,22 @@
 -- DELETE FROM employee WHERE emp_id = 2;
 
 -- select * FROM oldemployee;
+
+CREATE OR REPLACE TRIGGER trg_prevent_high_salary 
+BEFORE UPDATE OF salary ON employee 
+FOR EACH ROW 
+BEGIN 
+    IF :NEW.salary > 67000 THEN 
+        RAISE_APPLICATION_ERROR(-20002, 'Salary cannot exceed 67,000.'); 
+    END IF; 
+END; 
+
+
+UPDATE employee 
+SET salary = 66000 
+WHERE emp_id = 5
+
+UPDATE employee 
+SET salary = 70000 
+WHERE emp_id = 5
+ORA-20002: Salary cannot exceed 67,000. ORA-06512: at "SQL_RBDZZFPZYPFBUCFLKSYPPNPKP.TRG_PREVENT_HIGH_SALARY", line 3 ORA-06512: at "SYS.DBMS_SQL", line 1721
